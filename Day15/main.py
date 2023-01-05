@@ -12,18 +12,18 @@ def ask_customer_prefer():
 def check_user_request(user_notification, money_payed):
     if user_notification == "report":
         show_resources(resources)
-    if user_notification == "espresso":
-        espresso_cost = MENU["espresso"]["cost"]
+    if user_notification != "report":
+        coffee_cost = MENU[user_notification]["cost"]
         refund = 0
-        if check_resources(MENU['espresso']['ingredients']):
+        if check_resources(MENU[user_notification]['ingredients']):
             if check_payment(money_payed, user_notification):
-                refund = money_payed - espresso_cost
+                refund = money_payed - coffee_cost
                 print(f"Here is your {user_notification} and your refund {refund}")
                 return refund
             else:
                 print("Money is not enough")
         else:
-            check_resources(MENU['espresso'])
+            print("Resources is not enough for new coffee ")
 
 
 close_machine = False
@@ -37,7 +37,7 @@ while not close_machine:
         totalMoney = check_user_request(user_notification, money_paid)
     else:
         user_notification = ask_customer_prefer()
-        check_user_request(user_notification, totalMoney)
+        totalMoney = check_user_request(user_notification, totalMoney)
     askUser = input("Would you like to buy new one ? (y/n) ")
     if askUser == "y":
 
