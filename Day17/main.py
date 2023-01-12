@@ -1,23 +1,10 @@
-class User:
-    def __init__(self, user_id, username):
-        self.id = user_id
-        self.username = username
-        self.followers = 0
-        self.following = 0
+from question_model import Question
+from data import question_data
 
-    def follow(self, user):
-        user.followers += 1
-        self.following += 1
-
-
-user_1 = User("001", "Ali D.")
-user_2 = User("002", "Efe D.")
-
-user_1.follow(user_2)
-user_1.follow(user_2)
-user_1.follow(user_2)
-user_2.follow(user_1)
-
-
-print(user_1.id, user_1.username, user_1.followers, user_1.following)
-print(user_2.id, user_2.username, user_2.followers, user_2.following)
+question_bank=[]
+for question in question_data:
+    question_text=question["text"]
+    question_answer=question["answer"]
+    new_question=Question(question_text,question_answer)
+    question_bank.append(new_question)
+print(question_bank[0].question)
