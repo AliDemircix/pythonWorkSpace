@@ -1,14 +1,13 @@
 question_data = [
-{"text": "A slug's blood is green.", "answer": "True"},
-{"text": "The loudest animal is the African Elephant.", "answer": "False"},
-{"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
-{"text": "The total surface area of a human lungs is the size of a football pitch.", "answer": "True"},
-{"text": "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", "answer": "True"},
-{"text": "In London, UK, if you happen to die in the House of Parliament, you are entitled to a state funeral.", "answer": "False"},
-{"text": "It is illegal to pee in the Ocean in Portugal.", "answer": "True"},
-{"text": "You can lead a cow down stairs but not up stairs.", "answer": "False"},
-{"text": "Google was originally called 'Backrub'.", "answer": "True"},
-{"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
-{"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
-{"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
+    {"text": "Python is a frontend language", "answer": "False"},
+    {"text": "React is a javascript framework", "answer": "True"},
+    {"text": "You can use axios or fetch in the react app", "answer": "True"},
+    {"text": "It is restiricted in E6 to use var for variables", "answer": "True"},
+    {"text": "Python can be used for backend", "answer": "True"},
+    {"text": "You can use const defining to variable in python.", "answer": "False"},
+    {"text": "It is possible to use map also in python .", "answer": "False"},
+    {"text": "Python is a new language created 2022", "answer": "False"},
+    {"text": "Python is an OOP language", "answer": "True"},
+    {"text": "Python is a database language", "answer": "False"},
+
 ]
