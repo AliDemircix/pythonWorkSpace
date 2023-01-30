@@ -1,0 +1,1 @@
+invitation_list=["Willem","Wieger","Dirk","Alexsander","Laurens","Lenart","Emiel","Mark"]
