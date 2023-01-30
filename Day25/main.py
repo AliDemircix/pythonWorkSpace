@@ -58,3 +58,30 @@ data_dict= {
 data = pd.DataFrame(data_dict) # create new dataframe
 data.to_csv("Day25/created_csv.csv") # to create a csv file use this
 print(data)
+
+# we can also make our own files.
+df_self_created = pd.DataFrame([[1, 2, 3], [4, 5, 6], [7, 8, 9]], columns=['a', 'b', 'c'])
+print(df_self_created)
+
+################################## exploring files ##############################################
+df = pd.read_csv('Day25/iris.csv')
+
+# we can see what columns there are
+print(df.columns)
+
+# and we can se the entire shape
+print(df.shape) # (150,5)
+print(f'df has {df.shape[0]} rows and {df.shape[1]} columns')
+
+# we can also see the types
+print(df.dtypes)
+
+# see some statistics
+print(df.describe())
+print(df.info())
+
+# look at a single column, or multiple specific columns
+print(df['species'])
+# here we give a list of columns. It will print in that order. This is useful for reordering the columns of a dataframe
+print(df[['species', 'sepal_length']])
+
