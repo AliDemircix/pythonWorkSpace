@@ -28,6 +28,7 @@ for hour_data in weather_slice:
 
 if will_rain:
     print("It will rain")
+    #twilio code Block start
     client = Client(account_sid, auth_token)
     message = client.messages \
         .create(
@@ -36,3 +37,4 @@ if will_rain:
             to='+31685257214'
         )
     print(message.status)
+    #twilio code block end
