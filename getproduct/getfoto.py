@@ -18,8 +18,6 @@ img_lists=[]
 pro_list=pd.read_csv("products.csv")
 product_id_list=pro_list['WUNDER NO ']
 
-# product_id_list = ["WB100", "WB100/A", "WB101", "WB101/A", "WB102"]
-
 for product in product_id_list:
     search_form = driver.find_element(by=By.NAME, value="deger")
     search_form.send_keys(product)
