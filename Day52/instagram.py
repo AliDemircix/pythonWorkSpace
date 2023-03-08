@@ -19,8 +19,8 @@ turn_off_notifications.send_keys(
 
 username = driver.find_element(by=By.NAME, value="username")
 password = driver.find_element(by=By.NAME, value="password")
-username.send_keys("danilodonnatiello")
-password.send_keys("Dali2023")
+username.send_keys("fsfsfs")
+password.send_keys("fsfsfs")
 time.sleep(2)
 login = driver.find_element(
     by=By.XPATH, value='/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div/div[3]/button')
