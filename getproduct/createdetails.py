@@ -1,11 +1,10 @@
+import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
-import pandas as pd
 
-# chrome_driver_path = "/home/ali/Development/chromedriver" linux
 chrome_driver_path = "C:\Development"
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
@@ -16,18 +15,21 @@ driver.maximize_window()
 time.sleep(1)
 img_lists=[]
 
-pro_list=pd.read_csv("D:\workspace\pythonWorkSpace\getproduct\products.csv")
-product_id_list=pro_list['WUNDER NO ']
+urunler_listesi=pd.read_excel(r"D:\workspace\pythonWorkSpace\getproduct\urunler.xlsx")
+urun_adi_listesi=urunler_listesi["Ürün/Hizmet Adı"]
+urun_kodu_listesi=urunler_listesi["Ürün Kodu"]
+urun_marka_listesi=urunler_listesi["Marka"]
+urun_kategori_listesi=urunler_listesi["Kategori"]
 
-for product in product_id_list:
+#Urun resim linklerini siteden alıp liste olusturuyoruz
+for product in urun_kodu_listesi:
     search_form = driver.find_element(by=By.NAME, value="deger")
     search_form.send_keys(product)
     search_form.send_keys(Keys.ENTER)
     time.sleep(1)
     img_link=driver.find_element(by=By.CSS_SELECTOR,value=".example-image-link img")
     img_lists.append(img_link.get_attribute("src"))
-pro_list["resimlinkleri"]=img_lists
-pro_list.to_excel(r"D:\workspace\pythonWorkSpace\getproduct\mylists.xlsx",index=False) 
-# with open("imgs.txt", "a") as data_file:
-#     for img in img_lists:
-#             data_file.write(f"{img}\n")
+
+new_list=pd.DataFrame(urunler_listesi,columns=["ID","Ürün/Hizmet Adı","Ürün Kodu","Barkodu","Marka","Kategori"])
+new_list["Resim 1"]=img_lists
+new_list.to_excel(r"D:\workspace\pythonWorkSpace\getproduct\newList.xlsx",index=False)
