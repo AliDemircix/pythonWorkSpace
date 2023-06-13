@@ -23,3 +23,4 @@ for index, row in price_diff_df.iterrows():
 
 # Save the updated second Excel sheet
 df2.to_excel('excel/updated_second_sheet.xlsx', index=False)
+
